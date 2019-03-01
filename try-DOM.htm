@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>my title</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+function Place(id) {
+  this.id = id;
+}
+var placeNames = ["one", "two", "three", "four", "five"];
+var len = placeNames.length;
+var places = new Array(len);
+for (var i = 0; i < len; i++) {
+//  alert(e, i);
+  places[i] = new Place(e);
+}
+len = places.length;
+alert(len);
+
+Place.prototype.tag = "div";
+replaceableClass = "malleable";
+
+function alterDivs() {
+  places.push(new Place("barf"));
+  var len = places.length;
+//  alert(len);
+  for (var i = 0; i < len; i++) {
+    elem = document.getElementById(places[i].id);
+//    .replace("replaced");
+    if (null !== elem) {
+      elem.style.color = "red";
+    }
+  }
+}
+</script>
+
+</head>
+<body class="home">
+<a onMouseover="alterDivs();" href="#">change</a>
+<br />
+<div class="malleable" id="one">
+one-content
+</div>
+<div class="malleable" id="two">
+two-content
+</div>
+<div class="malleable" id="three">
+three-content
+</div>
+<div class="malleable" id="four">
+four-content
+</div>
+<div class="malleable" id="five">
+five-content
+</div>
+</body>
+</html>
